@@ -1122,3 +1122,30 @@ footer .container .row > div:last-child a:hover {
   transform: scale(.82) translateY(-.5rem) translateX(.15rem);
   color: var(--vf-gold);
 }
+
+/* Phone: photos must show FULL (no square cropping) */
+@media (max-width: 575.98px) {
+  .services .service__item {
+    min-height: 0;
+    padding: 0 !important;
+  }
+
+  .services .service__item img {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  .services .service__item h5 {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .works-grid .work-item img {
+    height: auto;
+  }
+}
