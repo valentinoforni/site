@@ -87,37 +87,37 @@
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="rotacijna.html"><h5>Ротаційна піч з обертовим подом</h5></a>
-            <img src="assets/ratation.png" alt="Ротаційна піч з обертовим подом" title="Ротаційна піч з обертовим подом">
+            <img src="assets/ratation.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="modulna.html"><h5>Піч модульна (лего піч)</h5></a>
-            <img src="assets/modul.png" alt="Піч модульна (лего піч)" title="Піч модульна (лего піч)">
+            <img src="assets/modul.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="klasichna.html"><h5>Піч класична</h5></a>
-            <img src="assets/clasic.png" alt="Піч класична" title="Піч класична">
+            <img src="assets/clasic.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="ekskluzivna.html"><h5>Ексклюзивна піч</h5></a>
-            <img src="assets/exkluz.png" alt="Ексклюзивна піч" title="Ексклюзивна піч">
+            <img src="assets/exkluz.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="kolesa.html"><h5>Піч на колесах</h5></a>
-            <img src="assets/wheel.png" alt="Піч на колесах" title="Піч на колесах">
+            <img src="assets/wheel.png" alt="">
           </div>
         </div>
         <div class="col-lg-6 mb-4">
           <div class="service__item p-4">
             <a href="tradicijna.html"><h5>Традиційна італійська піч</h5></a>
-            <img src="assets/trad.png" alt="Традиційна італійська піч" title="Традиційна італійська піч">
+            <img src="assets/trad.png" alt="">
           </div>
         </div>
     </div>
@@ -272,13 +272,20 @@
 <script src="assets/bootstrap.bundle.min.js"></script>
 
 <script>
+  var TF_FORM_URL = 'https://script.google.com/macros/s/AKfycbzZG-WyDKGBSHr6j1C8qfe_b1F7u10Qon89vhBPnof7lv2tpUzNdINgD-F2VYLN9zGE/exec';
   function vfSubmit(form) {
     var name = form.name.value.trim();
     var tel = form.tel.value.trim();
+    var comment = (form.comment ? form.comment.value : '').trim();
     if (!name || !tel) {
       alert('Будь ласка, вкажіть ім’я та телефон.');
       return false;
     }
+    fetch(TF_FORM_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, tel: tel, comment: comment })
+    }).catch(function () {});
     form.innerHTML =
       '<div class="success-box">' +
         '<div class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17l-5-5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>' +
