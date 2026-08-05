@@ -516,6 +516,7 @@ section h2,
   backdrop-filter: blur(4px);
 }
 
+#home-page .form h2,
 .form h2 {
   color: #fff;
   position: relative;
