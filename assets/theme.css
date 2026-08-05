@@ -359,7 +359,7 @@ section h2,
 }
 
 .about .row > .col-12 {
-  max-width: 920px;
+  max-width: none;
   margin: 0 auto;
 }
 
