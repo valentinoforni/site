@@ -1075,3 +1075,10 @@ footer .container .row > div:last-child a:hover {
     padding-right: 16px;
   }
 }
+
+/* Mobile banner: wide banner must NOT be zoom-cropped, otherwise text is cut */
+@media (max-width: 575.98px) {
+  .hero img {
+    height: auto;
+  }
+}
