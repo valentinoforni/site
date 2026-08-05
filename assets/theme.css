@@ -1149,3 +1149,21 @@ footer .container .row > div:last-child a:hover {
     height: auto;
   }
 }
+
+/* Touch devices: no stuck hover, photos must not fly/overflow */
+@media (hover: none) {
+  .services .service__item:hover,
+  .work-item:hover,
+  .argument-item:hover {
+    transform: none;
+  }
+
+  .services .service__item:hover img,
+  .work-item:hover img {
+    transform: none;
+  }
+}
+
+body {
+  overflow-x: clip;
+}
